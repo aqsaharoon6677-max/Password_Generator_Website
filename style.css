@@ -1,0 +1,234 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #f0edf0 0%, #a24b94 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    width: 400px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.output-box {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+#password {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #ad51a1;
+    border-radius: 8px 0 0 8px;
+    font-size: 16px;
+}
+
+#copyBtn {
+    padding: 12px 20px;
+    background: #a24b94;
+    color: white;
+    border: none;
+    border-radius: 0 8px 8px 0;
+    cursor: pointer;
+}
+
+.options {
+    margin-bottom: 20px;
+}
+
+.options label {
+    display: block;
+    margin: 10px 0;
+    color: #555;
+}
+
+#length {
+    width: 100%;
+    margin: 5px 0;
+}
+
+#generateBtn {
+    width: 100%;
+    padding: 15px;
+    background: #a24b95;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+#length {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 5px;
+    outline: none;
+    margin: 10px 0;
+}
+
+
+#length::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #a24b94;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 3px solid white;
+    margin-top: -6px;
+}
+
+
+#length::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #c44569;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 3px solid white;
+   border: none;
+}
+
+
+#length::-webkit-slider-runnable-track {
+    height: 8px;
+    background: linear-gradient(to right, #a24b94 0%, #a24b94 var(--slider-value, 30%), #e0e0e0 var(--slider-value, 30%), #e0e0e0 100%);
+    border-radius: 5px;
+}
+
+
+#length::-moz-range-progress {
+    background: #a24b94;
+    height: 8px;
+    border-radius: 5px;
+}
+
+
+input[type="checkbox"] {
+    accent-color: #a24b94;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    margin-right: 8px;
+}
+/* Container fade-in animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Generate button pulse animation */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 rgba(238, 90, 36, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(238, 90, 36, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(238, 90, 36, 0);
+    }
+}
+
+#generateBtn:active {
+    animation: pulse 0.5s;
+}
+
+/* Password generate hone pe slide animation */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+#password.generated {
+    animation: slideIn 0.3s ease-out;
+}
+
+/* Copy button animation */
+@keyframes bounce {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+#copyBtn.copied {
+    animation: bounce 0.4s ease;
+    background: #390330 !important;
+}
+
+/* Strength bar smooth fill */
+#strengthBar {
+    transition: width 0.5s ease, background 0.5s ease;
+}
+
+/* Hover effects for options */
+.options label {
+    transition: all 0.2s ease;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.options label:hover {
+    background: rgba(196, 69, 105, 0.1);
+    transform: translateX(5px);
+}
+
+/* Checkbox tick animation */
+input[type="checkbox"] {
+    transition: transform 0.2s ease;
+}
+
+input[type="checkbox"]:checked {
+    transform: scale(1.1);
+}
+
+/* Slider thumb glow on hover */
+#length::-webkit-slider-thumb:hover {
+    box-shadow: 0 0 15px rgba(146, 54, 116, 0.6);
+    transform: scale(1.1);
+}
+
+#length::-moz-range-thumb:hover {
+    box-shadow: 0 0 15px rgba(154, 57, 127, 0.6);
+    transform: scale(1.1);
+}
